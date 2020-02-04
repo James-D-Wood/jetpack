@@ -10,7 +10,7 @@ import sys
 import os
 
 # Our modules
-from .commands import launch, ls, remove
+from .commands import add, launch, ls, remove
 
 # this is the base group for our utility, all commands will be attached to @cli
 @click.group()
@@ -28,7 +28,15 @@ def run_launch(n, project):
     launch.main(new=n, project=project)  # offload complex logic to module 
     print()
 
-#jetpack list
+#jetpack add project
+@cli.command('add')
+def run_add():
+    '''Adds current directory to Jetpack'''
+    print()
+    add.main()
+    print() 
+
+#jetpack ls
 @cli.command('ls')
 def run_ls():
     '''Lists all projects known by Jetpack'''

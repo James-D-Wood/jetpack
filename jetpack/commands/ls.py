@@ -10,4 +10,6 @@ def main():
         for project in projects:
             print(project)
     else:
-        print("No projects have been added to Jetpack. Add a project by running `jetpack launch -n [project name]`.")
+        print('''No projects have been added to Jetpack.\n
+Add an existing directory by running `jetpack add` or create a new project by running `jetpack launch -n [project name]`.
+''')

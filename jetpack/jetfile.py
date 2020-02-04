@@ -16,10 +16,12 @@ class Jetfile:
         f.close()
 
     def add(self, project_path):
-        f = open(self.path, 'a')
-        f.write(project_path)
-        f.write('\n')
-        f.close()
+        with open(self.path, 'a') as f:
+            f.write(project_path)
+            f.write('\n')
+        project_name = project_path.split('/')[-1]
+        print(project_name + " added to jetfile.")
+
 
     def all(self):
         '''prints all projects in Jetfile'''
@@ -44,6 +46,7 @@ class Jetfile:
                 filename = entry[-1]
                 if filename.lower() != project.lower():
                     f.write(line)
+                    f.write('\n')
                 else:
                     removed = True
         return removed
