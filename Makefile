@@ -2,4 +2,4 @@ build:
 	pip install --editable .
 
 clean:
-	rm -r bchoc.egg-info
+	rm -r Jetpack.egg-info dist/ build/
