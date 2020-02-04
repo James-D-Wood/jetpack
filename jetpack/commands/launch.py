@@ -5,7 +5,6 @@ from ..exceptions import InputNotWhitelisted
 
 
 def main(new, project):
-    
     try:
         jetfile = Jetfile()
         if not re.match('\w', project):
@@ -28,6 +27,7 @@ def main(new, project):
         else:
             result = jetfile.find(project)
             if result:
+                # TODO: what to do about missing projects
                 os.system("code {}".format(result))
             else:
                 print("Entry not in jetfile")
